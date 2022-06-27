@@ -1,0 +1,14 @@
+access-list 1 permit 6.6.6.0 0.0.0.255
+access-list 2 permit 7.7.7.0 0.0.0.255
+!
+ip bgp-community new-format
+!
+route-map peer-100 permit 10
+match ip address 1
+set community 100:300
+!
+route-map peer-100 permit 20
+match ip address 2
+set community 100:250
+
+router bgp 200
