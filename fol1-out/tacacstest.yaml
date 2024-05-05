@@ -1,0 +1,4 @@
+- hostname: 2.2.2.2
+  username: staff3
+  password: staff3
+  timeout: 5

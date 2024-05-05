@@ -1,0 +1,25 @@
+в директории fol1 находятся все файлы необходимые для запуска тестов. тесты запускаются из этой директории.
+тесты седует запускать на x.x.x.x (есть поддержка все требуемых python-пакетов и  установлен докер ubuntu18/tacacs/v0923 (нужен для тестирования такакс))
+чтобы запустить тест нужно помимо скрипта указать либо название прошивки, либо файл по названию которого понятно какая фича тестируется.
+Доступные тесты на данный момент (09.23) примеры вызова:
+python3 run_test.py xxxx.image  - тестирование обновления прошивки на новую, предварительно следует положить нужную прошивку на доступный для DUT сервер и запустить на нем питон-сервер
+python3 run_test.py aaa.yaml - тестирование пользователей, ролей, прав
+python3 run_test.py tacacs.yaml - тестрование такакс сервера
+
+Новый способ запуска тестов:
+
+python3 click_runtest.py --help
+Usage: click_runtest.py [OPTIONS]
+
+Options:
+  -f, --feature [aaa|update|tacacs|filtermap]
+                                  Specify a feature for test  [required]
+  -i, --image TEXT                Specify a image for upload
+  --help                          Show this message and exit.
+
+python3 click_runtest.py -f aaa
+или
+python3 click_runtest.py -f update -i name_image
+
+
+add 05.05.24 - добавлен docker sdk, теперь можно запускать докер на удаленной машине, тест на такакс можно запускать на локальной машине

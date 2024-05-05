@@ -1,0 +1,22 @@
+create_superuser:
+  - any_command
+create_read-only:
+  - any_command
+create_operator:
+  - any_command
+create_monitor:
+  - any_command
+create_role:
+  - any_command
+  - any_command
+
+delete_user:
+  - any_command
+delete_role:
+  - any_command
+change_role:
+  - any_command
+change_password:
+  - any_command
+default_user:
+  - any_command
